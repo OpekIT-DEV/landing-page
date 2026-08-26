@@ -1,0 +1,24 @@
+# dependencies
+node_modules/
+
+# production
+build/
+dist/
+
+# local env files
+.env
+
+# logs
+logs/
+*.log
+npm-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+
+# editor directories and files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
