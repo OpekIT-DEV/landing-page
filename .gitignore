@@ -7,7 +7,7 @@ dist/
 
 # local env files
 .env
-
+next/
 # logs
 logs/
 *.log
