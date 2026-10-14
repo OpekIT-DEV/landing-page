@@ -1,4 +1,4 @@
-APP_DIR := app
+APP_DIR := landing-page
 NPM := npm --prefix $(APP_DIR)
 
 .PHONY: help install dev build run start lint clean
