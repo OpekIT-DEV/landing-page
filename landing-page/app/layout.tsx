@@ -101,7 +101,7 @@ const organizationJsonLd = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
-    email: "hello@opekit.com",
+    email: "opekit@opekit.com",
     availableLanguage: ["English"],
   },
   sameAs: ["https://www.linkedin.com/company/opekit"],
