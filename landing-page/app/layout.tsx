@@ -30,7 +30,7 @@ const oswald = Oswald({
   weight: ["700"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://opekit.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.opekit.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -101,7 +101,7 @@ const organizationJsonLd = {
   "@type": "Organization",
   name: "Opekit",
   url: siteUrl,
-  logo: `${siteUrl}/logo.svg`,
+  logo: `${siteUrl}/opek-logo.svg`,
   description:
     "IT agency providing software development, cloud, cybersecurity, and managed IT support.",
   contactPoint: {
