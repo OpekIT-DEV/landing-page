@@ -6,14 +6,11 @@ export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [prefersReduced, setPrefersReduced] = useState(false);
-  const [smallScreen, setSmallScreen] = useState(false);
   const [saveData, setSaveData] = useState(false);
 
   useEffect(() => {
     const mqReduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const mqSmall = window.matchMedia("(max-width: 767px)");
     setPrefersReduced(mqReduced.matches);
-    setSmallScreen(mqSmall.matches);
 
     const nav = navigator as Navigator & {
       connection?: { saveData?: boolean };
@@ -21,17 +18,14 @@ export default function Hero() {
     setSaveData(Boolean(nav.connection?.saveData));
 
     const onReduced = (e: MediaQueryListEvent) => setPrefersReduced(e.matches);
-    const onSmall = (e: MediaQueryListEvent) => setSmallScreen(e.matches);
     mqReduced.addEventListener("change", onReduced);
-    mqSmall.addEventListener("change", onSmall);
 
     return () => {
       mqReduced.removeEventListener("change", onReduced);
-      mqSmall.removeEventListener("change", onSmall);
     };
   }, []);
 
-  const renderVideo = !(smallScreen || saveData);
+  const renderVideo = !saveData;
 
   useEffect(() => {
     const video = videoRef.current;
@@ -74,22 +68,23 @@ export default function Hero() {
           playsInline
           preload="metadata"
           aria-hidden="true"
-          className={`absolute inset-0 h-full w-full object-cover object-right ${
-            prefersReduced ? "hidden" : ""
+          className={`absolute inset-0 h-full w-full object-cover ${
+            prefersReduced ? "hidden" : "object-center md:object-right"
           }`}
         >
+          <source src="/timeline2.mp4" type="video/mp4" media="(max-width: 767px)" />
           <source src="/hero.mp4" type="video/mp4" />
         </video>
       )}
 
-      <div className="relative z-20 mx-auto flex w-full max-w-[1200px] flex-col px-[5vw] pt-[22vh]">
-        <div className="w-full md:w-2/5">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-white/60">
+      <div className="relative z-20 mx-auto flex w-full max-w-[1200px] flex-col py-4 px-8 pt-[22vh]">
+        <div className="w-full py-32 md:w-2/5">
+          <p className="text-[11px]  font-semibold uppercase tracking-[0.15em] text-white/60">
             DIGITAL COMPANY
           </p>
 
           <h1
-            className="mt-2 font-serif text-[clamp(2rem,4vw,4rem)] font-bold uppercase leading-[1.15]"
+            className="oswald-hero mt-2 text-[clamp(2rem,4vw,4rem)] uppercase leading-[1.15]"
           >
             MAKE YOUR PRESENCE KNOWN
           </h1>
@@ -98,15 +93,15 @@ export default function Hero() {
             We help ambitious brands design, build, and scale digital products.
           </p>
 
-          <button
-            type="button"
+          <a
+            href="#services"
             className="group mt-5 inline-flex items-center gap-[10px] rounded-full border border-[rgba(255,255,255,0.3)] bg-[rgba(255,255,255,0.08)] px-5 py-2.5 text-[#e8ecf8] backdrop-blur-[8px] transition-colors duration-200 hover:bg-[rgba(255,255,255,0.18)]"
           >
             explore services
             <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">
               ›
             </span>
-          </button>
+          </a>
         </div>
       </div>
     </section>

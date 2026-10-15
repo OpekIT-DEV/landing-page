@@ -35,8 +35,9 @@ export default function About() {
         </div>
 
         <div className="relative">
-          <div className="aspect-[4/3] overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-500 via-indigo-700 to-slate-900 shadow-xl">
-            <div className="flex h-full items-end p-8">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[url('/example.jpeg')] bg-cover bg-center shadow-xl">
+            <div className="absolute inset-0 bg-black/25" />
+            <div className="relative flex h-full items-end p-8">
               <div className="rounded-xl bg-white/10 px-5 py-4 backdrop-blur">
                 <p className="text-lg font-semibold text-white">
                   Building reliable software &amp; infrastructure

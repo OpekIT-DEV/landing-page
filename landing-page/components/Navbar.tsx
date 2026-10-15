@@ -34,7 +34,14 @@ export default function Navbar() {
       <nav
         className={`flex h-14 w-[94%] max-w-[1200px] items-center justify-between rounded-full border px-6 transition-all duration-300 ${pillClass}`}
       >
-        <a href="/" className="flex items-center">
+        <a
+          href="/"
+          onClick={(e) => {
+            e.preventDefault();
+            window.location.reload();
+          }}
+          className="flex items-center"
+        >
           <img src="/opek-logo.svg" alt="Opek logo" className="h-8 w-auto" />
         </a>
 
@@ -44,6 +51,12 @@ export default function Navbar() {
               key={l.label}
               href={l.href}
               aria-current={l.active ? "page" : undefined}
+              onClick={(e) => {
+                if (l.href === "/") {
+                  e.preventDefault();
+                  window.location.reload();
+                }
+              }}
               className={`text-sm lowercase ${l.active ? activeClass : linkClass}`}
             >
               {l.label}
@@ -90,7 +103,14 @@ export default function Navbar() {
               <a
                 key={l.label}
                 href={l.href}
-                onClick={() => setOpen(false)}
+                onClick={(e) => {
+                  if (l.href === "/") {
+                    e.preventDefault();
+                    window.location.reload();
+                    return;
+                  }
+                  setOpen(false);
+                }}
                 aria-current={l.active ? "page" : undefined}
                 className={`rounded-md px-3 py-2 text-sm lowercase transition-colors duration-200 hover:text-[#00d4ff] ${
                   l.active ? "text-[#00d4ff]" : ""
