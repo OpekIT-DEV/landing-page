@@ -89,7 +89,7 @@ export default function Hero() {
           </p>
 
           <h1
-            className="mt-2 font-serif text-[clamp(2rem,4vw,4rem)] font-bold uppercase leading-[1.15] text-glass-hollow"
+            className="mt-2 font-serif text-[clamp(2rem,4vw,4rem)] font-bold uppercase leading-[1.15]"
           >
             MAKE YOUR PRESENCE KNOWN
           </h1>
