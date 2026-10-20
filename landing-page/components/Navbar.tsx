@@ -20,8 +20,8 @@ export default function Navbar() {
   }, []);
 
   const pillClass = scrolled
-    ? "border-slate-200/70 bg-white/90 text-slate-900 shadow-sm backdrop-blur-[12px] hover:border-[#00d4ff] hover:shadow-[0_0_20px_rgba(0,212,255,0.25)]"
-    : "border-[rgba(255,255,255,0.35)] bg-[rgba(255,255,255,0.08)] text-white backdrop-blur-[12px] hover:border-[#00d4ff] hover:shadow-[0_0_20px_rgba(0,212,255,0.25)]";
+    ? "border-slate-200/70 bg-white/90 text-slate-900 shadow-sm backdrop-blur-[12px]"
+    : "border-[rgba(255,255,255,0.35)] bg-[rgba(255,255,255,0.08)] text-white backdrop-blur-[12px]";
 
   const linkClass = scrolled
     ? "text-slate-900/90 transition-colors duration-200 hover:text-[#00d4ff]"
