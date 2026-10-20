@@ -116,7 +116,7 @@ export default function ContactCTA() {
               ) : (
                 <button
                   type="submit"
-                  className="inline-flex w-full items-center justify-center rounded-full bg-indigo-500 px-6 py-3 text-base font-semibold text-white transition hover:bg-indigo-400 "
+                  className="inline-flex w-full items-center justify-center rounded-full bg-indigo-500 px-6 py-3 text-base font-semibold text-white transition hover:bg-indigo-400"
                 >
                   Send message
                 </button>
