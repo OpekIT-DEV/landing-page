@@ -67,16 +67,6 @@ const glassPill =
 export default function NotFound() {
   return (
     <div className="relative flex min-h-screen flex-col overflow-hidden bg-[#070914] text-white">
-      {/* Ambient brand glow — CSS only, keeps the error page light. */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_55%_at_78%_18%,rgba(0,212,255,0.16),transparent_65%),radial-gradient(55%_50%_at_12%_78%,rgba(47,85,181,0.30),transparent_70%)]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.12] [-webkit-mask-image:radial-gradient(70%_60%_at_50%_40%,#000,transparent)] [mask-image:radial-gradient(70%_60%_at_50%_40%,#000,transparent)] [background-image:linear-gradient(to_right,rgba(255,255,255,0.10)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.10)_1px,transparent_1px)] [background-size:64px_64px]"
-      />
-
       <header className="relative z-10 mx-auto flex w-full max-w-[1200px] items-center justify-between px-6 py-6 md:px-8">
         <Link href="/" className="flex items-center">
           <img src="/opek-logo.svg" alt="Opekit" className="h-8 w-auto" />
@@ -101,7 +91,7 @@ export default function NotFound() {
               stroke would otherwise be invisible. */}
           <p
             aria-hidden="true"
-            className="oswald-hero mt-2 text-[clamp(6rem,20vw,15rem)] leading-[0.85] text-white/10 [-webkit-text-stroke:3px_rgba(210,220,245,0.5)] [text-shadow:0_0_60px_rgba(0,212,255,0.28)]"
+            className="oswald-hero mt-2 text-[clamp(6rem,20vw,15rem)] leading-[0.85] text-white/10 [-webkit-text-stroke:3px_rgba(210,220,245,0.5)]"
           >
             404
           </p>
@@ -119,16 +109,6 @@ export default function NotFound() {
           <div className="mt-9 flex flex-wrap items-center gap-3">
             <Link href="/" className={`group ${glassPill}`}>
               back to home
-              <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">
-                ›
-              </span>
-            </Link>
-
-            <Link
-              href="/#contact"
-              className="group inline-flex items-center gap-[10px] rounded-full border border-[rgba(255,255,255,0.3)] px-5 py-2.5 text-[#e8ecf8] transition-colors duration-200 hover:bg-[rgba(255,255,255,0.10)]"
-            >
-              talk to us
               <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">
                 ›
               </span>
