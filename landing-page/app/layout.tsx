@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Manrope, Oswald, Playfair_Display } from "next/font/google";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -30,10 +31,8 @@ const oswald = Oswald({
   weight: ["700"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.opekit.com";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Opekit | IT Services & Digital Solutions for Growing Businesses",
     template: "%s | Opekit",
@@ -100,8 +99,8 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Opekit",
-  url: siteUrl,
-  logo: `${siteUrl}/opek-logo.svg`,
+  url: SITE_URL,
+  logo: `${SITE_URL}/opek-logo.svg`,
   description:
     "IT agency providing software development, cloud, cybersecurity, and managed IT support.",
   contactPoint: {
@@ -117,7 +116,7 @@ const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Opekit",
-  url: siteUrl,
+  url: SITE_URL,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

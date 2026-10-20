@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import { SITE_URL } from "@/lib/site";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Process from "@/components/Process";
@@ -27,7 +28,7 @@ const serviceJsonLd = {
   provider: {
     "@type": "Organization",
     name: "Opekit",
-    url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.opekit.com",
+    url: SITE_URL,
   },
   areaServed: "Worldwide",
   serviceType: [

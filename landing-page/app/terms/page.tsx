@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.opekit.com";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
@@ -14,7 +13,7 @@ export const metadata: Metadata = {
     title: "Terms of Service | Opekit",
     description:
       "Terms and conditions for using the Opekit website and services.",
-    url: `${siteUrl}/terms`,
+    url: `${SITE_URL}/terms`,
   },
 };
 

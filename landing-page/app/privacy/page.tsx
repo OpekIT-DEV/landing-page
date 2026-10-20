@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.opekit.com";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -14,7 +13,7 @@ export const metadata: Metadata = {
     title: "Privacy Policy | Opekit",
     description:
       "How Opekit handles information submitted through opekit.com and related services.",
-    url: `${siteUrl}/privacy`,
+    url: `${SITE_URL}/privacy`,
   },
 };
 
