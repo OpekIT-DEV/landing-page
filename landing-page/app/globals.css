@@ -18,12 +18,19 @@
   --font-sans: var(--font-manrope);
   --font-mono: var(--font-geist-mono);
   --font-serif: var(--font-playfair);
+  --font-oswald: var(--font-oswald);
 }
 
 .text-glass-hollow {
   color: rgba(190, 205, 235, 0.35);
   -webkit-text-stroke: 1px rgba(210, 220, 245, 0.7);
-  text-shadow: 0 0 24px rgba(210, 220, 245, 0.15);
+}
+
+.oswald-hero {
+  font-family: var(--font-oswald), "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
 
 @media (prefers-color-scheme: dark) {

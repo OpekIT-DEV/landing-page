@@ -47,18 +47,9 @@ export default function ContactCTA() {
             <div className="mt-8 space-y-4 text-slate-700">
               <p>
                 <span className="font-semibold">Email:</span>{" "}
-                <a className="text-indigo-600 hover:underline" href="mailto:hello@opekit.com">
-                  hello@opekit.com
+                <a className="text-indigo-600 hover:underline" href="mailto:opekit@opekit.com">
+                  opekit@opekit.com
                 </a>
-              </p>
-              <p>
-                <span className="font-semibold">Phone:</span>{" "}
-                <a className="text-indigo-600 hover:underline" href="tel:+15551234567">
-                  +1 (555) 123-4567
-                </a>
-              </p>
-              <p>
-                <span className="font-semibold">Hours:</span> Mon–Fri, 9am–6pm (your timezone)
               </p>
             </div>
           </div>

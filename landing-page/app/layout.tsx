@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Manrope, Playfair_Display } from "next/font/google";
+import { Geist, Geist_Mono, Manrope, Oswald, Playfair_Display } from "next/font/google";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -24,10 +25,14 @@ const playfair = Playfair_Display({
   weight: ["700"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.opekit.com";
+const oswald = Oswald({
+  variable: "--font-oswald",
+  subsets: ["latin"],
+  weight: ["700"],
+});
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Opekit | IT Services & Digital Solutions for Growing Businesses",
     template: "%s | Opekit",
@@ -51,7 +56,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   icons: {
-    icon: "/opek-logo.svg",
+    icon: "/faviconv2.ico",
   },
   openGraph: {
     title: "Opekit | IT Services & Digital Solutions",
@@ -94,14 +99,14 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Opekit",
-  url: siteUrl,
-  logo: `${siteUrl}/logo.svg`,
+  url: SITE_URL,
+  logo: `${SITE_URL}/opek-logo.svg`,
   description:
     "IT agency providing software development, cloud, cybersecurity, and managed IT support.",
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
-    email: "hello@opekit.com",
+    email: "opekit@opekit.com",
     availableLanguage: ["English"],
   },
   sameAs: [
@@ -114,14 +119,14 @@ const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Opekit",
-  url: siteUrl,
+  url: SITE_URL,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${manrope.variable} ${playfair.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${manrope.variable} ${playfair.variable} ${oswald.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <a
