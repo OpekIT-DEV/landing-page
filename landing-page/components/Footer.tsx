@@ -1,11 +1,21 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="bg-slate-950 py-12 text-slate-400">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div>
-            <p className="text-lg font-bold text-white">Opekit</p>
-            <p className="mt-2 max-w-sm text-sm">
+            <div className="inline-flex items-center rounded-xl bg-white px-3 py-2">
+              <Image
+                src="/opek-logo.svg"
+                alt="Opekit"
+                width={180}
+                height={56}
+                className="h-7 w-auto"
+              />
+            </div>
+            <p className="mt-3 max-w-sm text-sm">
               Reliable IT services, custom software, and managed support for growing
               businesses.
             </p>

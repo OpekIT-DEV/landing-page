@@ -45,7 +45,7 @@ export default function Navbar() {
           <img src="/opek-logo.svg" alt="Opek logo" className="h-8 w-auto" />
         </a>
 
-        <div className="hidden items-center gap-8 md:flex lg:gap-10">
+        <div className="hidden items-center gap-10 md:flex lg:gap-12">
           {links.map((l) => (
             <a
               key={l.label}
@@ -57,18 +57,28 @@ export default function Navbar() {
                   window.location.reload();
                 }
               }}
-              className={`text-sm lowercase ${l.active ? activeClass : linkClass}`}
+              className={`group relative rounded-full px-3 py-2 text-sm font-semibold lowercase transition-colors duration-200 ${l.active ? activeClass : linkClass}`}
             >
               {l.label}
+              <span
+                aria-hidden
+                className={`absolute inset-x-3 -bottom-0.5 h-px origin-left bg-[#00d4ff] transition-transform duration-300 group-hover:scale-x-100 ${
+                  l.active ? "scale-x-100" : "scale-x-0"
+                }`}
+              />
             </a>
           ))}
         </div>
 
         <a
           href="#contact"
-          className={`hidden text-sm lowercase md:block ${linkClass}`}
+          className={`group relative hidden rounded-full px-3 py-2 text-sm font-semibold lowercase md:block ${linkClass}`}
         >
           contact us
+          <span
+            aria-hidden
+            className="absolute inset-x-3 -bottom-0.5 h-px origin-left scale-x-0 bg-[#00d4ff] transition-transform duration-300 group-hover:scale-x-100"
+          />
         </a>
 
         <button
@@ -112,7 +122,7 @@ export default function Navbar() {
                   setOpen(false);
                 }}
                 aria-current={l.active ? "page" : undefined}
-                className={`rounded-md px-3 py-2 text-sm lowercase transition-colors duration-200 hover:text-[#00d4ff] ${
+                className={`rounded-md px-3 py-2 text-sm font-semibold lowercase transition-colors duration-200 hover:text-[#00d4ff] ${
                   l.active ? "text-[#00d4ff]" : ""
                 }`}
               >
@@ -122,7 +132,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="rounded-md px-3 py-2 text-sm lowercase transition-colors duration-200 hover:text-[#00d4ff]"
+              className="rounded-md px-3 py-2 text-sm font-semibold lowercase transition-colors duration-200 hover:text-[#00d4ff]"
             >
               contact us
             </a>
