@@ -84,7 +84,7 @@ export default function Hero() {
           </p>
 
           <h1
-            className="oswald-hero mt-2 text-[clamp(2rem,4vw,4rem)] uppercase leading-[1.15]"
+            className="oswald-hero mt-2 text-[clamp(2.5rem,5.5vw,6rem)] uppercase leading-[1.15]"
           >
             MAKE YOUR PRESENCE KNOWN
           </h1>
