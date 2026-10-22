@@ -24,7 +24,7 @@ const playfair = Playfair_Display({
   weight: ["700"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://opekit.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.opekit.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -104,7 +104,10 @@ const organizationJsonLd = {
     email: "hello@opekit.com",
     availableLanguage: ["English"],
   },
-  sameAs: ["https://www.linkedin.com/company/opekit"],
+  sameAs: [
+    "https://www.linkedin.com/company/opekit",
+    "https://github.com/OpekIT-DEV",
+  ],
 };
 
 const websiteJsonLd = {
