@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   icons: {
-    icon: "/opek-logo.svg",
+    icon: "/faviconv2.ico",
   },
   openGraph: {
     title: "Opekit | IT Services & Digital Solutions",
