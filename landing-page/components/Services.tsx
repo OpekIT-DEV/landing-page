@@ -59,34 +59,85 @@ const services: Service[] = [
 
 export default function Services() {
   return (
-    <section id="services" className="bg-white py-24 text-slate-900">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-wider text-indigo-600">
-            What we do
-          </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-            End-to-end IT services for modern businesses
-          </h2>
-          <p className="mt-4 text-lg text-slate-600">
+    <section
+      id="services"
+      className="relative overflow-hidden bg-[#070914] py-24 text-white sm:py-32"
+    >
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div
+          className="absolute inset-0 opacity-[0.35]"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)",
+            backgroundSize: "64px 64px",
+            maskImage:
+              "radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%)",
+          }}
+        />
+        <div className="absolute -top-40 left-1/4 h-[28rem] w-[28rem] rounded-full bg-[#00d4ff]/10 blur-[120px]" />
+        <div className="absolute -bottom-40 right-0 h-[26rem] w-[26rem] rounded-full bg-indigo-500/10 blur-[120px]" />
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-2xl">
+            <p className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#00d4ff]">
+              <span aria-hidden className="h-px w-8 bg-[#00d4ff]/70" />
+              What we do
+            </p>
+            <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+              End-to-end IT services for{" "}
+              <span className="text-white/50">modern businesses</span>
+            </h2>
+          </div>
+          <p className="max-w-sm text-base leading-relaxed text-slate-300 md:text-right">
             Pick a single service or let us own your entire technology stack — we
             design, build, secure, and operate it.
           </p>
         </div>
 
-        <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => (
+        <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((s, i) => (
             <li
               key={s.title}
-              className="group rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+              className="group relative flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-7 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-[#00d4ff]/40 hover:bg-white/[0.06] hover:shadow-[0_24px_70px_-24px_rgba(0,212,255,0.45)] motion-reduce:hover:translate-y-0"
             >
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                  {s.icon}
-                </svg>
-              </span>
-              <h3 className="mt-5 text-xl font-semibold">{s.title}</h3>
-              <p className="mt-2 text-slate-600">{s.description}</p>
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -right-20 -top-20 h-44 w-44 rounded-full bg-[#00d4ff]/0 blur-3xl transition-colors duration-500 group-hover:bg-[#00d4ff]/20"
+              />
+
+              <div className="relative flex items-center justify-between">
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-br from-[#00d4ff]/20 to-indigo-500/10 text-[#00d4ff] transition-colors duration-300 group-hover:border-[#00d4ff]/40">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                  >
+                    {s.icon}
+                  </svg>
+                </span>
+                <span className="font-mono text-xs tracking-[0.25em] text-white/25 transition-colors duration-300 group-hover:text-white/40">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+              </div>
+
+              <h3 className="relative mt-6 text-xl font-semibold text-white">
+                {s.title}
+              </h3>
+              <p className="relative mt-2 flex-1 text-sm leading-relaxed text-slate-300">
+                {s.description}
+              </p>
+
+              <span
+                aria-hidden
+                className="relative mt-6 block h-px w-10 bg-[#00d4ff]/30 transition-all duration-300 group-hover:w-full group-hover:bg-[#00d4ff]/70"
+              />
             </li>
           ))}
         </ul>

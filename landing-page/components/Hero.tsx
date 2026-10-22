@@ -77,9 +77,9 @@ export default function Hero() {
         </video>
       )}
 
-      <div className="relative z-20 mx-auto flex w-full max-w-[1200px] flex-col py-4 px-8 pt-[22vh]">
-        <div className="w-full py-32 md:w-2/5">
-          <p className="text-[11px]  font-semibold uppercase tracking-[0.15em] text-white/60">
+      <div className="relative z-20 mx-auto flex w-full max-w-[1200px] flex-col items-center px-8 py-4 pt-[22vh]">
+        <div className="flex w-full flex-col items-center py-32 text-center md:max-w-4xl">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-white/60">
             DIGITAL COMPANY
           </p>
 
@@ -89,7 +89,7 @@ export default function Hero() {
             MAKE YOUR PRESENCE KNOWN
           </h1>
 
-          <p className="mt-9 max-w-[28ch] text-sm leading-[1.4] text-white">
+          <p className="mx-auto mt-9 max-w-[28ch] text-sm leading-[1.4] text-white">
             We help ambitious brands design, build, and scale digital products.
           </p>
 
